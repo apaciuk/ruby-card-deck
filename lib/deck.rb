@@ -7,9 +7,7 @@ require_relative './card'
 class Deck
   SUITS = %i[spades hearts diamonds clubs].freeze
   def initialize
-    cards = SUITS.map do |suit|
-      Card.build(suit)
-    end.flatten
+    cards = SUITS.map { |suit| Card.build(suit) }.flatten
     @cards = cards.shuffle
   end
 
