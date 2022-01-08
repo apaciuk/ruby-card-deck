@@ -6,8 +6,11 @@ require_relative './card'
 
 class Deck
   def initialize
-    spades = (1..13).map { |value| Card.new(value, :spades) }
-    @cards = spades.shuffle
+    spades = Card.build(:spades)
+    hearts = Card.build(:hearts)
+    diamonds = Card.build(:diamonds)
+    clubs = Card.build(:clubs)
+    @cards = [spades, hearts, diamonds, clubs].flatten.shuffle
   end
 
   def draw

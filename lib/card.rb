@@ -6,8 +6,12 @@ class Card
   attr_accessor :suit
 
   def initialize(value, suit)
-    @value = value 
+    @value = value
     @suit = suit
+  end
+
+  def self.build(suit)
+    (1..13).map { |value| new(value, suit) }
   end
 
   def value
