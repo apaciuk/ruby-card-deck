@@ -3,7 +3,7 @@
 # A single card Object
 
 class Card
-  attr_accessor :value, :suit
+  attr_accessor :suit
 
   def initialize(value, suit)
     @value = value 
@@ -14,6 +14,12 @@ class Card
     case @value
     when 1
       :ace
+    when 11
+      :jack
+    when 12
+      :queen
+    when 13
+      :king
     else
       @value
     end

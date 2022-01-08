@@ -4,12 +4,13 @@ require_relative './card'
 
 # a collection of cards
 
-class Deck 
-  def initialize  
-    @cards = [Card.new(1, :spades), Card.new(2, :spades)].shuffle
+class Deck
+  def initialize
+    spades = (1..13).map { |value| Card.new(value, :spades) }
+    @cards = spades.shuffle
   end
 
-  def draw 
+  def draw
     @cards.pop
   end
 end
