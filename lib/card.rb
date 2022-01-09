@@ -3,11 +3,14 @@
 # A single card Object
 
 class Card
-  attr_accessor :suit
 
   def initialize(value, suit)
     @value = value
     @suit = suit
+  end
+
+  def to_s
+    "The #{value} of #{@suit}"
   end
 
   def self.build(suit)
