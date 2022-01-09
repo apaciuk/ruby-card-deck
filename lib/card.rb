@@ -18,10 +18,6 @@ class Card
     value <=> other.value
   end
 
-  def self.build(suit)
-    (1..13).map { |value| new(value, suit) }
-  end
-
   def human_value
     case value
     when 1
